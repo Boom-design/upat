@@ -9,3 +9,99 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+@layer components {
+    /* Navigation Styles */
+    nav {
+        @apply transition-all duration-200;
+    }
+
+    nav a {
+        @apply relative transition-all duration-200;
+    }
+
+    /* Product Cards */
+    .product-card {
+        @apply transition-all duration-300 hover:shadow-md;
+    }
+
+    /* Form Inputs */
+    input,
+    textarea,
+    select {
+        @apply transition-colors duration-200;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+        @apply ring-2 ring-offset-2 ring-blue-500 dark:ring-offset-slate-800;
+    }
+
+    /* Buttons */
+    button {
+        @apply transition-all duration-200 active:scale-95;
+    }
+
+    button:hover {
+        @apply shadow-md;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+        @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    }
+
+    /* Success/Error Messages */
+    .alert {
+        @apply rounded-lg p-4 text-sm font-medium;
+    }
+
+    .alert-success {
+        @apply bg-green-50 text-green-800 dark:bg-green-900/20 dark:text-green-300;
+    }
+
+    .alert-error {
+        @apply bg-red-50 text-red-800 dark:bg-red-900/20 dark:text-red-300;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-slide-in {
+        animation: slideIn 0.3s ease-out;
+    }
+
+    /* Smooth Transitions */
+    * {
+        @apply transition-colors duration-200;
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+        body {
+            @apply bg-slate-950 text-gray-100;
+        }
+    }
+}
+
+/* Custom Utility Classes */
+.text-balance {
+    text-wrap: balance;
+}
+
+.truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
